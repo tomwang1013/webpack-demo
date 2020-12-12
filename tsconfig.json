@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    /**
+     * 语法检查相关
+     */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+
+    "moduleResolution": "node", // module解析(resolve)机制
+    // https://stackoverflow.com/questions/56238356/understanding-esmoduleinterop-in-tsconfig-file
+    "esModuleInterop": true,
+//    "allowSyntheticDefaultImports": true, // 当esModuleInterop为true时，自动为true
+    "target": "ES2015", // 影响代码转换，如箭头函数等
+//    "module": "ES2015", // 影响对import/export的转换 // target为ES2015时默认为target的值
+    "jsx": "react",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
