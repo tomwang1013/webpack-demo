@@ -1,19 +1,11 @@
-const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FileListPlugin = require('./plugins/file-list');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
   entry: {
     index: './src/index.tsx',
-  },
-  devServer: {
-    contentBase: './dist',
-    open: true,
-    hot: true,
-    inline: true,
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -55,10 +47,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      // filename: '[name].css',
-      // chunkFilename: '[name].css',
-    }),
+    new MiniCssExtractPlugin(),
+    new FileListPlugin()
   ],
   optimization: {
     splitChunks: {
@@ -81,8 +71,6 @@ module.exports = {
         },
       },
     },
-    // runtimeChunk: 'single',
     moduleIds: 'deterministic',
-    // minimize: false
   }
 };
