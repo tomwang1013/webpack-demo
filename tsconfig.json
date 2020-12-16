@@ -9,6 +9,8 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
+    // https://www.typescriptlang.org/tsconfig#isolatedModules
+    "isolatedModules": true,
 
     "moduleResolution": "node", // module解析(resolve)机制
     // https://stackoverflow.com/questions/56238356/understanding-esmoduleinterop-in-tsconfig-file

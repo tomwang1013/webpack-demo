@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileListPlugin = require('./plugins/file-list');
 
 module.exports = {
+  // target: ['web', 'es5'], // for ie11 development. 设置之后hot load没法工作，必须注释
   entry: {
     index: './src/index.tsx',
   },
@@ -15,9 +16,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
-    alias: {
+    // 需要使用react-hot-loader时
+    /*alias: {
       'react-dom': '@hot-loader/react-dom'
-    }
+    }*/
   },
   module: {
     rules: [

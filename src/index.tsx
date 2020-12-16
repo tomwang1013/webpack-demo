@@ -11,3 +11,10 @@ const render = (Component: () => JSX.Element) => {
 }
 
 render(App);
+
+if (module.hot) {
+  module.hot.accept(['./App'], function () {
+    const App = require('./App').default;
+    render(App);
+  })
+}
