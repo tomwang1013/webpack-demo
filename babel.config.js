@@ -2,7 +2,7 @@ module.exports = api => {
   return {
     "presets": [
       ["@babel/preset-env", {
-      "modules": api.env('test') ? 'auto' : false,
+        "modules": api.env('test') ? 'auto' : false,
         "useBuiltIns": "usage",
         "corejs": 3,
         "targets": { ie: '11' }
