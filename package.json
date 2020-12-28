@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --json=compilation-stats.json",
     "profile": "webpack --profile --json > stats.json",
     "analyzer": "webpack-bundle-analyzer stats.json",
     "test": "jest"

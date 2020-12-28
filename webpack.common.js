@@ -29,7 +29,16 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              // true for all files matching /\.module\.\w+$/i.test(filename) regular expression
+              // 对包含.module.的scss文件作为module处理：
+              // 通过 import Style from 'xxx.module.scss'和style.className使用；
+              // 其他scss文件还是全局作用的
+              modules: true
+            }
+          },
           'sass-loader'
         ],
       },
@@ -50,7 +59,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin(),
     new MiniCssExtractPlugin(),
-    new FileListPlugin()
+    // new FileListPlugin()
   ],
   optimization: {
     splitChunks: {
